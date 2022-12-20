@@ -36,11 +36,24 @@ class BinarySearchTree {
       }
     }
   }
+  find(value) {
+    if (value == null || !this.root) return undefined;
+    let current = this.root;
+    while (current) {
+      if (value === current.value) return current;
+      if (value < current.value) {
+        current = current.left;
+      } else {
+        current = current.right;
+      }
+    }
+    return undefined;
+  }
 }
 
-const newBTS = new BinarySearchTree();
-newBTS.insert(20);
-newBTS.insert(14);
-newBTS.insert(30);
-newBTS.insert(15);
-console.log("test newBTS", newBTS);
+const newBST = new BinarySearchTree();
+newBST.insert(20);
+newBST.insert(14);
+newBST.insert(30);
+newBST.insert(15);
+console.log("test newBST", newBST);
